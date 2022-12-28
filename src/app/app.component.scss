@@ -1,0 +1,42 @@
+.main-container {
+  background-color: #68cad1;
+  color: #7f3f98;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  h1 {
+    font-size: 40px;
+  }
+  p {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  img {
+    width: 30px;
+  }
+}
+header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  img {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    h1 {
+      font-size: 30px;
+      margin: 0 10px 0 10px;
+    }
+    p {
+      font-size: 20px;
+      margin: 0 10px 0 10px;
+    }
+  }
+}
