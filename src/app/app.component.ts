@@ -19,22 +19,17 @@ export class AppComponent {
   }
   getApi() {
     this.loading = true;
-    if (this.value === 'sim') {
-      this.apiService.getApi().subscribe(
-        (response) => {
-          this.text = response.response;
-          this.loading = false;
-        },
-        (error) => {
-          this.text = 'Erro';
-          this.loading = false;
-          throw new Error(error);
-        }
-      );
-    } else {
-      this.text = 'Erro';
-      this.loading = false;
-      throw new Error('Erro');
-    }
+
+    this.apiService.getApi(this.value).subscribe(
+      (response) => {
+        this.text = response.response;
+        this.loading = false;
+      },
+      (error) => {
+        this.text = 'Error - 500';
+        this.loading = false;
+        throw new Error(error);
+      }
+    );
   }
 }
