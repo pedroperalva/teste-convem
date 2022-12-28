@@ -28,11 +28,13 @@ export class AppComponent {
         (error) => {
           this.text = 'Erro';
           this.loading = false;
+          throw new Error(error);
         }
       );
     } else {
       this.text = 'Erro';
       this.loading = false;
+      throw new Error('Erro');
     }
   }
 }
