@@ -7,14 +7,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiService {
-  private baseUrl = 'https://63ab666dcf281dba8c2217bc.mockapi.io/api/convem';
+  private baseUrl = 'http://localhost:3040/api';
   constructor(private http: HttpClient) {}
 
-  getApi(value: string): Observable<any> {
-    if (value === 'sim') {
-      return this.http.get(this.baseUrl + '/' + value);
-    } else {
-      return this.http.get(this.baseUrl + '/error');
-    }
+  getApi(value: { response: string }): Observable<any> {
+    return this.http.post(this.baseUrl, value);
   }
 }

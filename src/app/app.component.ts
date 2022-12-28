@@ -15,12 +15,12 @@ export class AppComponent {
   constructor(private apiService: ApiService) {}
 
   onInput(value: string) {
-    this.value = value.toLocaleLowerCase();
+    this.value = value;
   }
   getApi() {
     this.loading = true;
 
-    this.apiService.getApi(this.value).subscribe(
+    this.apiService.getApi({ response: this.value }).subscribe(
       (response) => {
         this.text = response.response;
         this.loading = false;
